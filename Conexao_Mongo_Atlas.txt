@@ -1,0 +1,24 @@
+Conectar
+
+mongo "mongodb: //cluster0-shard-00-00-jxeqq.mongodb.net: 27017, cluster0-shard-00-01-jxeqq.mongodb.net: 27017, cluster0-shard-00-02-jxeqq.mongodb. net: 27017 / test? réplicaSet = Cluster0-shard-0 "--authenticationAdministração de banco de dados --ssl --username m001-student --password 
+
+Comandos
+
+Show dbs
+use video
+show collections
+ddb.()
+db.alunos.find({materias:'MongoDB'})
+load ("loadMovieDetailsDataset.js")
+db.movieDetails.find({"awards.wins": 2, "awards.nominations": 2}).count()
+
+db.movies.find([mpaaRating: "PG-13", year : 2009}).pretty()
+db.movieDetails.find({"runtime": {$gte:90, $lte: 120}},{_id: 0, title:1, runtime: 1})
+db.movieDetails.find({"runtime": {$gte:180}, "tomato.meter":{$gte:95}},{_id: 0, title:1, runtime: 1})
+db.movieDetails.find({"rated": {$ne:"unrated"}},{_id: 0, title:1, runtime: 1}) 
+db.movieDetails.find({"rated": {$in:["G","PG"]}},{_id: 0, title:1, runtime: 1})
+db.movieDetails.find({"rated":null})
+db.movieDetails.find({$or: [{"tomato.meter": {$gt:95}}, {"metacritic": {$gt: 88}}]},{_id:0, title: 1, "tomato.meter":1,"metacritic": 1})
+db.movieDetails.find({$and: [{"tomato.meter": {$gt:95}}, {"metacritic": {$gt: 88}}]},{_id:0, title: 1, "tomato.meter":1,"metacritic": 1})
+db.movieDetails.find({$and: [{"metacritic": {$ne: null}}, {"metacritic": {$exists: true}}]}, {_id:0, title: 1, "tomato.meter":1,"metacritic": 1})
+({$or: [{watlev:"always dry"},{depth:0}]})
