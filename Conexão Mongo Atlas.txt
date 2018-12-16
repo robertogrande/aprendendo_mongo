@@ -1,9 +1,0 @@
-Conectar
-
-mongo "mongodb: //cluster0-shard-00-00-jxeqq.mongodb.net: 27017, cluster0-shard-00-01-jxeqq.mongodb.net: 27017, cluster0-shard-00-02-jxeqq.mongodb. net: 27017 / test? réplicaSet = Cluster0-shard-0 "--authenticationAdministração de banco de dados --ssl --username m001-student --password m001-mongodb-basics
-
-Comandos
-Show dbs
-use video
-show collections
-db.movieDetails.find().pretty()
